@@ -1,3 +1,25 @@
+
+let screensize = 1399.98;
+let previousScrollY = 0;
+
+//Scroll bar
+window.addEventListener("scroll", function(event) {
+    let header = document.getElementById("header");
+    if(this.scrollY > previousScrollY && this.scrollY > 150) {
+        header.className = "content-header hide";
+    }
+    else if(this.scrollY < previousScrollY && this.scrollY > 150) {
+        header.className = "content-header shadow";
+    }
+    else if(this.scrollY > previousScrollY) {
+        header.className = "content-header shadow";
+    }
+    else {
+        header.className = "content-header";
+    }
+    previousScrollY = this.scrollY
+});
+
 //contact me button
 element = document.getElementById("contact-btn")
 element.addEventListener("mouseover", function(e) {
